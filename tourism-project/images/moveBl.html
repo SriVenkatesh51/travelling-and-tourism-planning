@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#container {
+width: 100px;
+height: 100px;
+background-color: blue;
+position: absolute;
+}
+</style>
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+var container = document.getElementById("container");
+var margin = 0;
+var direction = "right";
+
+function moveDiv() {
+if (direction === "right") {
+margin += 100;
+container.style.marginLeft = margin + "px";
+if (margin >= window.innerWidth - 100) {
+direction = "left";
+return;
+}
+}
+}
+
+setInterval(moveDiv, 1000);
+</script>
+</body>
+</html>
